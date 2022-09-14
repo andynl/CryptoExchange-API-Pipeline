@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS crypto.assets (
     coin_name VARCHAR(50),
     coin_code VARCHAR(50),
     close_price NUMERIC,
-    last_transaction_type BOOLEAN,
+    last_transaction_type NUMERIC,
     high_price NUMERIC,
     low_price NUMERIC,
     open_price NUMERIC,
