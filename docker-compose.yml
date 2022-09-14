@@ -19,3 +19,21 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  runpipeline:
+    image: runpipeline
+    container_name: runpipeline
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/code
+    environment:
+      DATABASE_USER: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      DATABASE_DB: ${POSTGRES_DB}
+      DATABASE_HOST: ${POSTGRES_HOST}
+      DATABASE_PORT: ${POSTGRES_PORT}
+    depends_on:
+      warehouse:
+        condition: service_healthy
