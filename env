@@ -1,0 +1,5 @@
+POSTGRES_USER=simple_etl_project
+POSTGRES_PASSWORD=simple_etl_project_password
+POSTGRES_DB=Exchange
+POSTGRES_HOST=warehouse
+POSTGRES_PORT=5432
